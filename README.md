@@ -22,6 +22,7 @@ Dependences:
 - Lodash
 
 TODO:
-Create a descent documentation and examples
-Expand options and customizations
-Remove dependences (Utilization of jquery and lodash)
+- Create a descent documentation and examples
+- Expand options and customizations
+- Remove dependences (Utilization of jquery and lodash)
+- Webpack

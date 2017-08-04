@@ -16,7 +16,7 @@ var Select2Cascade = (function() {
             const item_field = items[id][field];
             let val_field = item_field;
             if (field_id)
-              val_field = field_id;
+              val_field = items[id][field_id];
             newOptions += '<option value="' + val_field + '">' + item_field + '</option>';
           }
 

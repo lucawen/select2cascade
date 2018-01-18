@@ -7,15 +7,16 @@ usage: Select2Cascade.set(options);
 options:
 - parent: The parent element for filter
 - child: The child element for put the ajax response
-- url: the url of ajax for filter. (ADd ':parentId:' in url to recognize the location for id to ajax)
+- url: the url of ajax for filter.
 - field: the field for get infos
-- select2Options: options for select2
-- field_id: the field for 'value' dom
-- ordering: order by 'field' or not
+- select2Options: options for select2 - Default: {}
+- field_id: the field for 'value' dom - Default: none (if none, the field option is the same for field_id)
+- ordering: order by 'field' or not - Default: false
+- get_param: name of the param for send in get request - Default: 'search'
 
 Example:
 
-{parent: $('#order'), child: $('#spect'), url: '/api/example/:parentId:/', field: 'name', select2Options: { width: 'resolve' }, ordering: true}
+{parent: $('#order'), child: $('#spect'), url: '/api/example/', field: 'name', select2Options: { width: 'resolve' }, ordering: true}
 
 Dependences:
 - Jquery

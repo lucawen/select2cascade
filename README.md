@@ -13,6 +13,7 @@ options:
 - field_id: the field for 'value' dom - Default: none (if none, the field option is the same for field_id)
 - ordering: order by 'field' or not - Default: false
 - get_param: name of the param for send in get request - Default: 'search'
+- reverse: ordering by desc (true) or asc (false) - Default: false
 
 Example:
 

@@ -11,7 +11,7 @@ var Select2Cascade = (function () {
         return this;
     };
 
-    function _set({ parent, child, url, field, select2Options = {}, field_id = null, get_param = 'search', ordering = false } = {}) {
+    function _set({ parent, child, url, field, select2Options = {}, field_id = null, get_param = 'search', ordering = false, reverse = false } = {}) {
         parent.select2(select2Options).on("change", function (e) {
             child.prop("disabled", true);
             child.trigger({
@@ -21,7 +21,14 @@ var Select2Cascade = (function () {
             var data = {};
             data[get_param] = $(this).val();
             $.getJSON(url, data, function (items) {
-                items = _.orderBy(items, field, 'asc');
+                if (ordering === true) {
+                    if (reverse === true)
+                        var orderIs = 'desc';
+                    else
+                        var orderIs = 'asc';
+
+                    items = _.orderBy(items, field, orderIs);
+                }
                 var itens_mod = [];
                 var newOptions = '<option value>-- Selecione --</option>';
                 var iten_default = newOptions;
